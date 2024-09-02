@@ -1,22 +1,17 @@
 package test;
 
-import java.util.List;
-
-import co.edu.uptc.models.aplications.Calculator;
+import co.edu.uptc.models.aplications.AbstractCalculator;
 
 public class RealCal<T> {
     
    
-    public void run(List<T> list, String title) {
-        Calculator<T> cal = new Calculator<T>(list);
+    public void run(AbstractCalculator<T> calculator, String title) {
         System.out.println("");
         System.out.println("----------"+ title+"-----");
-        int result = 0;
     
         long startTime = System.nanoTime();
-    
-        cal.sumData();
-        result = cal.getResult();
+        calculator.calculate();
+        T result = calculator.getResult();
     
         double endTime = System.nanoTime();
         double delayTime = endTime - startTime;

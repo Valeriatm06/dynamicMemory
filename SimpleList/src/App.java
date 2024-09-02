@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
-
-import co.edu.uptc.models.aplications.Calculator;
+import co.edu.uptc.models.aplications.IntegerCalculator;
+import co.edu.uptc.models.aplications.Operation;
 import test.RealCal;
 import test.Test;
 
@@ -15,11 +15,16 @@ public class App {
     Test testObject = new Test();
 
     testObject.testArrayList(randomNumber);
+
     RealCal<Integer> ra = new RealCal<>();
-    ra.run(testObject.getList(),"ArrayLIst");
+
+    IntegerCalculator<Integer> intCal = new IntegerCalculator<>(testObject.getList(), Operation.SUM);
+    ra.run(intCal,"ArrayLIst");
+
+    intCal.resetResult();
     
      testObject.testSimpleList(randomNumber);;
-     ra.run(testObject.getList(),"simpleLIst");
+     ra.run(intCal,"simpleLIst");
   }
 
   public static List<Integer> generateRandomNumer(int size, int min, int max){
