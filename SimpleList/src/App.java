@@ -2,9 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import co.edu.uptc.models.aplications.Calculator;
-import test.DemoArrayList;
-import test.DemoSimpleList;
 import test.RealCal;
+import test.Test;
 
 public class App {
 
@@ -12,16 +11,14 @@ public class App {
   public static void main(String[] args) throws Exception {
 
     
-    DemoArrayList da = new DemoArrayList();
-    da.testArrayList();
+    Test testObject = new Test();
+
+    testObject.testArrayList(null);
     RealCal<Integer> ra = new RealCal<>();
-    ra.run(da.getList(),"ArrayLIst");
+    ra.run(testObject.getList(),"ArrayLIst");
     
-    
-    
-     DemoSimpleList ds = new DemoSimpleList();
-     ds.testArrayList();
-     ra.run(ds.getList(),"simpleLIst");
+     testObject.testSimpleList(null);;
+     ra.run(testObject.getList(),"simpleLIst");
     
  
 
